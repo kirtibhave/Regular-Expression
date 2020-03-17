@@ -9,7 +9,10 @@ email=$3
 
 #CONSTANTS
 NAMERULE="(^[A-Z]{1}[a-z]{2,}*)$"
-emailRule="^([a-zA-Z0-9]{3,}[._+-]{1}[a-zA-Z0-9]{3,})[@]{1}[a-zA-Z0-9]*[.]{1}[a-z]{2,3}|[.]{1}[a-z]{2,3}$"
+EMAILRULE="^([a-zA-Z0-9]{3,}[._+-]{1}[a-zA-Z0-9]{3,})[@]{1}[a-zA-Z0-9]*[.]{1}[a-z]{2,3}|[.]{1}[a-z]{2,3}$"
+MOBILERULE="^([0-9]{2}\s{1}[0-9]{10})$"
+
+read -p "Enter mobile number" mobileNumber
 
 #Function is used to check user's firstname and lastname 
 function checkNameRule(){
@@ -27,12 +30,23 @@ fi
 function checkEmail(){
 if [[ $email =~ $EMAILRULE ]]
 then
-	echo "vaild email"
+	echo "vaild email address"
 else
-	echo "invalid email"
+	echo "invalid email address"
 fi
 }
 
+#function is used to check user's mobile number
+function checkMobileNumber(){
+if [[ $mobileNumber =~ $MOBILERULE ]]
+then
+	echo "valid mobile number"
+else
+	echo "Invalid mobile number"
+fi
+}
+
+
 checkNameRule
 checkEmail
-
+checkMobileNumber
