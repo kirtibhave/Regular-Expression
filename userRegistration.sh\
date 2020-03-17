@@ -2,12 +2,13 @@
 echo "**********Welcome to User Registration Problem**********"
 shopt -s extglob
 
-firstName=$1
-lastName=$2
+read -p "enter firstname:" firstName
+read -p "enter lastName:" lastName
+
+function nameRule(){
 nameRule="(^[A-Z]{1}[a-z]{2,}*)$"
 
-function checkNameRule(){
-if [[ $firstName =~ $nameRule && $lastName =~ $nameRule ]]
+if [[ $firstName =~ $1 && $lastName =~ $2 ]]
 then
    echo "Firstname and lastname is correct"
    echo "Firstname is:"$firstName
@@ -17,6 +18,6 @@ else
 fi
 }
 
-checkNameRule
+nameRule $firstName $lastName
 
 
