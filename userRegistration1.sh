@@ -8,21 +8,7 @@ firstNameRule="(^[A-Z]{1}[a-z]{2,}*)$"
 
 if [[ $firstName =~ $firstNameRule ]]
 then
-   echo "Firstname is correct"
+	echo "Firstname is correct"
 else
-   echo "Invalid Firstname...!!Enter proper Firstname"
+	echo "Invalid Firstname...!!Enter proper Firstname"
 fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
